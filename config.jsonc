@@ -1,0 +1,41 @@
+// ============================================================================
+// ygo-ai CLI Configuration
+// ============================================================================
+//
+// This file uses JSONC format — JSON with comments and trailing commas.
+// Lines starting with // are ignored.  Block comments /* ... */ are also supported.
+//
+// Priority (highest to lowest):
+//   1. CLI flags (e.g. --db-path, --script-dir, --pics-dir)
+//   2. Environment variables (YGO_AI_DB_PATH, YGO_AI_SCRIPT_DIR, YGO_AI_PICS_DIR)
+//   3. This config file
+//
+// Environment variable mapping:
+//   YGO_AI_DB_PATH      → default_db_path
+//   YGO_AI_SCRIPT_DIR   → default_script_dir
+//   YGO_AI_PICS_DIR     → default_pics_dir
+//
+// Note: AI generation (generate/repair/parse/batch) is handled by
+// the backup CLI at ai-backup/ai_cli.py with its own config.
+// ============================================================================
+
+{
+  // Path to your .cdb card database file.
+  //   The CLI searches this database for reference cards and card lookups.
+  //   Download with: ygo-ai data update --type cdb
+  //
+  "default_db_path": "~/.ygo-ai/data/cards.cdb",
+
+  // Directory containing Lua card scripts.
+  //   The CLI searches for reference scripts here (e.g. c89631139.lua).
+  //   Download with: ygo-ai data update --type scripts
+  //
+  "default_script_dir": "~/.ygo-ai/scripts",
+
+  // Directory containing card images (卡图).
+  //   Card images follow the naming convention {code}.jpg (e.g. 89631139.jpg).
+  //   Field spell images are stored in a "field" subdirectory.
+  //   Download with: ygo-ai data update --type pics
+  //
+  "default_pics_dir": "~/.ygo-ai/pics"
+}

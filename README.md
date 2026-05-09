@@ -1,0 +1,1 @@
+# YGO Skills for Claude Code\n\n## 安装\n\n\n\n## 包含的技能\n\n| 技能 | 说明 |\n|---|---|\n| YGO-Desc | OCG 中文效果描述规范编写与校验 |\n| YGO-Script | YGOPro Lua 脚本生成与诊断 |\n| YGO-Cdb | .cdb 卡牌数据库构建与管理 |\n| use-vault | 切换活跃知识库 |\n| vault-status | 查看知识库状态 |\n\n## 前提条件\n\n- Claude Code\n-  CLI (pip install ygo-ai-cli)\n- Obsidian vault (含  和 )\n- MCP 服务器  指向你的 vault

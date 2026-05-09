@@ -1,0 +1,19 @@
+[project]
+name = "ygo-ai-cli"
+version = "0.1.0"
+description = "AI-powered YGOPro Lua script generator CLI"
+requires-python = ">=3.10"
+dependencies = ["click>=8", "requests>=2.25"]
+
+[project.scripts]
+ygo-ai = "ygo_ai.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ygo_ai*"]
+
+[tool.setuptools.package-data]
+ygo_ai = ["bridge/**/*"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

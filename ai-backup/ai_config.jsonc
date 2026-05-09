@@ -1,0 +1,6 @@
+{
+  "api_base_url": "http://38.55.132.235:10011/v1",
+  "model": "gpt-5.4",
+  "temperature": 1.0,
+  "api_key": "sk-CrystalEchoJ-Codex"
+}
