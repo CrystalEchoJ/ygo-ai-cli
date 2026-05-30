@@ -145,8 +145,8 @@ ygo-ai setup --force  # 覆盖已有配置
 
 | 项目 | 说明 |
 |------|------|
-| [ygo-knowledge-vault](https://github.com/YOUR_ORG/ygo-knowledge-vault) | YGO 知识库模板（OCG 规则、编卡知识） |
-| [ygo-skills](https://github.com/YOUR_ORG/ygo-skills) | Claude Code 技能文件（YGO-Script/Desc/Cdb） |
+| [ygo-knowledge-vault](https://github.com/CrystalEchoJ/ygo-knowledge-vault) | YGO 知识库模板（OCG 规则、编卡知识） |
+| [ygo-skills](https://github.com/CrystalEchoJ/ygo-skills) | Claude Code 技能文件（YGO-Script/Desc/Cdb） |
 
 ## 许可证
 
