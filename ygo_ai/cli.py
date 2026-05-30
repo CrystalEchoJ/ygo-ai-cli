@@ -327,6 +327,43 @@ def sources():
     click.echo(f"\nOverride sources by editing ~/.ygo-ai/sources.json")
 
 
+# ── setup ─────────────────────────────────────────────────────────────
+
+
+@click.command()
+@click.option("--force", is_flag=True, default=False,
+              help="Overwrite existing config file")
+def setup(force):
+    """Initialize ygo-ai configuration directory.
+
+    Creates ~/.ygo-ai/ with default config.jsonc.
+    """
+    from .config import save_config, YGOProPaths
+
+    config_dir = Path.home() / ".ygo-ai"
+    config_path = config_dir / "config.jsonc"
+
+    if config_path.exists() and not force:
+        click.echo(f"Config already exists at {config_path}")
+        click.echo("Use --force to overwrite.")
+        return
+
+    config_dir.mkdir(parents=True, exist_ok=True)
+
+    paths = YGOProPaths(
+        default_db_path="~/.ygo-ai/data/cards.cdb",
+        default_script_dir="~/.ygo-ai/scripts",
+        default_pics_dir="~/.ygo-ai/pics",
+    )
+    save_config(paths, path=config_path)
+
+    click.echo(f"Created config at {config_path}")
+    click.echo(f"\nDefault data directory: ~/.ygo-ai/")
+    click.echo(f"\nNext steps:")
+    click.echo(f"  1. Download card data:  ygo-ai data update")
+    click.echo(f"  2. Check data status:   ygo-ai data info")
+
+
 # ── Main CLI group ────────────────────────────────────────────────────
 
 
@@ -348,6 +385,7 @@ def main():
 main.add_command(from_cdb)
 main.add_command(diagnose)
 main.add_command(data)
+main.add_command(setup)
 
 
 if __name__ == "__main__":
